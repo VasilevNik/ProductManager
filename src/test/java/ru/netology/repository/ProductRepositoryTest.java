@@ -11,7 +11,7 @@ import ru.netology.product.Smartphone;
 public class ProductRepositoryTest {
 
     ProductRepository repository = new ProductRepository();
-    ProductManager manager = new ProductManager(repository);
+
 
     Smartphone smartphone1 = new Smartphone(1, "Iphone 13 Pro", 85000, "Apple");
     Smartphone smartphone2 = new Smartphone(2, "Mi 8 Pro", 25000, "Xiaomi");
@@ -23,13 +23,13 @@ public class ProductRepositoryTest {
 
     @BeforeEach
     public void setup() {
-        manager.add(smartphone1);
-        manager.add(smartphone2);
-        manager.add(smartphone3);
-        manager.add(book4);
-        manager.add(book5);
-        manager.add(book6);
-        manager.add(book7);
+        repository.saveProduct(smartphone1);
+        repository.saveProduct(smartphone2);
+        repository.saveProduct(smartphone3);
+        repository.saveProduct(book4);
+        repository.saveProduct(book5);
+        repository.saveProduct(book6);
+        repository.saveProduct(book7);
 
     }
 
