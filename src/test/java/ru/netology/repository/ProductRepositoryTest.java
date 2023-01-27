@@ -3,10 +3,7 @@ package ru.netology.repository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.netology.product.Book;
-import ru.netology.product.Product;
-import ru.netology.product.ProductManager;
-import ru.netology.product.Smartphone;
+import ru.netology.product.*;
 
 public class ProductRepositoryTest {
 
@@ -46,12 +43,21 @@ public class ProductRepositoryTest {
     @Test
     public void removeProductById() {
 
-        repository.removeById(book4.getId());
+        repository.removeById(book5.getId());
 
-        Product[] expected = {smartphone1, smartphone2, smartphone3, book5, book6, book7};
+        Product[] expected = {smartphone1, smartphone2, smartphone3, book4, book6, book7};
         Product[] actual = repository.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void removeProductByIncorrectId() {
+
+        Assertions.assertThrows(NotFoundException.class, () -> {
+            repository.removeById(9);
+        });
 
     }
 }
