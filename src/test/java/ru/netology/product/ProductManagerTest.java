@@ -20,13 +20,13 @@ public class ProductManagerTest {
 
     @BeforeEach
     public void setup() {
-        manager.add(smartphone1);
-        manager.add(smartphone2);
-        manager.add(smartphone3);
-        manager.add(book4);
-        manager.add(book5);
-        manager.add(book6);
-        manager.add(book7);
+        manager.save(smartphone1);
+        manager.save(smartphone2);
+        manager.save(smartphone3);
+        manager.save(book4);
+        manager.save(book5);
+        manager.save(book6);
+        manager.save(book7);
     }
 
     @Test
